@@ -1,0 +1,76 @@
+<nav class="bg-white shadow-lg">
+  <div class="flex justify-between px-10 md:px-18 lg:px-24">
+    <div class="flex gap-2 py-3">
+
+      <!-- Website Logo -->
+      <a routerLink="/" class="font font-bold text-green-900 text-lg lg:text-2xl">TRAVELERS</a>
+    </div>
+
+    <!-- Web menu button -->
+    <div class="hidden lg:flex items-center space-x-8 2xl:text-lg">
+      <a
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="border-green-900 text-green-900  border-b-4"
+        routerLink="/"
+        class=" py-4 px-2  font-semibold text-gray-500 font-semibold hover:text-green-900 transition duration-300">Home</a>
+      <a
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="border-green-900 text-green-900  border-b-4"
+        routerLink="/about-us"
+        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">About
+        Us</a>
+      <a
+        routerLinkActive="border-green-900 text-green-900  border-b-4"
+        routerLink="/tours"
+        class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">Tours</a>
+      <a href=""
+         class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">Gallery</a>
+      <a href="/login.html"
+         class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">Log in</a>
+      <a href="/register.html"
+         class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">Register</a>
+      <a href>
+        <button class="px-3 py-1 text-white bg-green-900 hover:bg-green-800 shadow-lg rounded">
+          Contact us
+        </button>
+      </a>
+
+    </div>
+
+
+    <!-- Mobile menu button -->
+    <div class="lg:hidden flex items-center">
+      <button (click)="mobileMenuHidden = !mobileMenuHidden" class="outline-none mobile-menu-button">
+        <svg class="bluecolor w-8 h-8 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile menu -->
+  <div [class.hidden]="mobileMenuHidden" class="mobile-menu">
+    <ul class="text-center">
+      <li (click)="mobileMenuHidden = true" routerLinkActive="text-white bg-green-900" [routerLinkActiveOptions]="{exact: true}" routerLink="/"><a
+        class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white font-semibold">Home</a></li>
+      <li (click)="mobileMenuHidden = true" routerLinkActive="text-white bg-green-900"   [routerLinkActiveOptions]="{exact: true}" routerLink="/about-us"><a
+             class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">About
+        Us</a></li>
+      <li (click)="mobileMenuHidden = true" routerLinkActive="text-white bg-green-900" [routerLinkActiveOptions]="{exact: true}" routerLink="/tours"><a
+             class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">
+        Tours</a></li>
+      <li (click)="mobileMenuHidden = true"><a
+             class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">Contact us</a>
+      </li>
+      <!-- <li><a href="" class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">User name<i class="fa fa-user-o pl-2"></i></a></li>
+<li><a href="" class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">Logout</a></li> -->
+      <li (click)="mobileMenuHidden = true"><a
+             class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">Login<i
+        class="fa fa-user-o pl-2"></i></a></li>
+      <li (click)="mobileMenuHidden = true"><a
+             class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">Register</a>
+      </li>
+    </ul>
+  </div>
+</nav>

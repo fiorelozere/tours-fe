@@ -1,14 +1,17 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss'],
+  selector: 'app-tours',
+  templateUrl: './tours.component.html',
+  styleUrls: ['./tours.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomepageComponent implements OnInit {
+export class ToursComponent implements OnInit {
 
   tours = [
     {
+      id: '1',
       title: 'Mountain',
       description: `
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -18,6 +21,7 @@ export class HomepageComponent implements OnInit {
       image: 'assets/img/orange.png'
     },
     {
+      id: '2',
       title: 'Mountain',
       description: `
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -27,6 +31,7 @@ export class HomepageComponent implements OnInit {
       image: 'assets/img/city.png'
     },
     {
+      id: '3',
       title: 'Mountain',
       description: `
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -37,16 +42,9 @@ export class HomepageComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onSearch(searchQuery: string): any {
-    console.log(searchQuery);
-  }
-
-  onSubmit(payload: any): void {
-    console.log(payload)
-  }
 }

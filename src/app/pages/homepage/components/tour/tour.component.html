@@ -1,0 +1,18 @@
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <img class="w-full" [src]="tour.image" alt="Mountain">
+  <div class="px-6 py-4">
+    <div class="font font-bold text-green-900 text-xl mb-2">{{tour.title}}</div>
+    <p class="text-gray-700 text-base font-thin">
+   {{tour.description}}
+    </p>
+    <div class="flex gap-2">
+      <p class="font text-gray-500 text-lg font-medium line-through pt-2 ">{{tour.price | currency}}</p>
+      <p class="font text-green-900 text-lg font-semibold pt-2">{{tour.price | currency}}</p>
+    </div>
+  </div>
+  <div class="px-6 pt-2 mb-8">
+    <button (click)="bookClicked.emit(tour)" class="font px-6 py-2 text-white bg-green-900 hover:bg-green-800 shadow-lg rounded">
+      BOOK NOW
+    </button>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<app-tour-filters></app-tour-filters>
+<section class="container mx-auto">
+  <div class="flex justify-center grid grid-cols-1 gap-8 my-10 md:grid-cols-3 lg:grid-cols-4  px-10 ">
+    <app-tour
+      (bookClicked)="router.navigateByUrl('/tours/' + $event.id)"
+      *ngFor="let tour of tours" [tour]="tour">
+    </app-tour>
+  </div>
+</section>

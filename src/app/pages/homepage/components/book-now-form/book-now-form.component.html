@@ -1,0 +1,54 @@
+
+<form [formGroup]="form" class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+  <div class="mb-4 md:flex md:justify-between">
+    <div class="mb-4 md:mr-2 md:mb-0">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="firstName">
+        First Name
+      </label>
+      <input
+        formControlName="firstName"
+        class="w-full px-3 py-2 text-sm text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+        id="firstName" type="text" placeholder="First Name"/>
+    </div>
+    <div class="md:ml-2">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
+        Last Name
+      </label>
+      <input
+        formControlName="lastName"
+        class="w-full px-3 py-2 text-sm text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+        id="lastName" type="text" placeholder="Last Name"/>
+    </div>
+  </div>
+  <div class="mb-4">
+    <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
+      Email
+    </label>
+    <input
+      formControlName="email"
+      class="w-full px-3 py-2 mb-3 text-sm text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+      id="email" type="email" placeholder="Email"/>
+  </div>
+
+  <div class="mb-4">
+    <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
+      Message
+    </label>
+    <textarea
+      formControlName="message"
+      name="description" placeholder="Message" id="message" cols="20" rows="5"
+      class="w-full px-3 py-2 mb-3 text-sm text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"></textarea>
+  </div>
+
+
+  <div class="mb-2 text-center">
+    <button
+      (click)="submit.emit(form.value)"
+      [disabled]="form.invalid"
+      class="font w-full px-4 py-2 font-bold text-white bg-green-900 rounded hover:bg-green-800 focus:outline-none focus:shadow-outline"
+      type="button">
+      BOOK
+    </button>
+  </div>
+  <hr class="border-t"/>
+</form>
