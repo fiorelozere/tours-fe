@@ -1,5 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {ToursParams, ToursStore} from "../../services/tours.store";
+import {Tour} from "../../models/tour.model";
 
 @Component({
   selector: 'app-tours',
@@ -9,42 +11,21 @@ import {Router} from "@angular/router";
 })
 export class ToursComponent implements OnInit {
 
-  tours = [
-    {
-      id: '1',
-      title: 'Mountain',
-      description: `
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Voluptatibus quia, Nonea! Maiores et
-       perferendis  eaque, exercitationem praesentium nihil.`,
-      price: 23,
-      image: 'assets/img/orange.png'
-    },
-    {
-      id: '2',
-      title: 'Mountain',
-      description: `
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Voluptatibus quia, Nonea! Maiores et
-       perferendis  eaque, exercitationem praesentium nihil.`,
-      price: 23,
-      image: 'assets/img/city.png'
-    },
-    {
-      id: '3',
-      title: 'Mountain',
-      description: `
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Voluptatibus quia, Nonea! Maiores et
-       perferendis  eaque, exercitationem praesentium nihil.`,
-      price: 23,
-      image: 'assets/img/turkey.png'
-    }
-  ];
-
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    public store: ToursStore
+  ) { }
 
   ngOnInit(): void {
+    this.store.load({})
+  }
+
+  paginate(pageNumber: number): void {
+    this.store.load({pageNumber});
+  }
+
+  search(params: Partial<ToursParams>): void {
+    this.store.load({...params});
   }
 
 }

@@ -13,6 +13,8 @@ import {AboutComponent} from './containers/about/about.component';
 import { ToursComponent } from './containers/tours/tours.component';
 import { TourFiltersComponent } from './components/tour-filters/tour-filters.component';
 import { TourDetailsComponent } from './containers/tour-details/tour-details.component';
+import {ToursStore} from "./services/tours.store";
+import {SharedModule} from "../../shared/shared.module";
 
 const routes: Routes = [
   {
@@ -51,7 +53,11 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
+  ],
+  providers: [
+    ToursStore
   ]
 })
 export class HomepageModule {

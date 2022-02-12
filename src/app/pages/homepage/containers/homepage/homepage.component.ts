@@ -1,4 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {BookingService} from "../../services/booking.service";
+import {BookingPayload} from "../../models/booking-payload.model";
+import {take} from "rxjs";
+import {Router} from "@angular/router";
+import {ToursService} from "../../services/tours.service";
 
 @Component({
   templateUrl: './homepage.component.html',
@@ -7,37 +12,13 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  tours = [
-    {
-      title: 'Mountain',
-      description: `
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Voluptatibus quia, Nonea! Maiores et
-       perferendis  eaque, exercitationem praesentium nihil.`,
-      price: 23,
-      image: 'assets/img/orange.png'
-    },
-    {
-      title: 'Mountain',
-      description: `
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Voluptatibus quia, Nonea! Maiores et
-       perferendis  eaque, exercitationem praesentium nihil.`,
-      price: 23,
-      image: 'assets/img/city.png'
-    },
-    {
-      title: 'Mountain',
-      description: `
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Voluptatibus quia, Nonea! Maiores et
-       perferendis  eaque, exercitationem praesentium nihil.`,
-      price: 23,
-      image: 'assets/img/turkey.png'
-    }
-  ];
+  tours$ = this.toursService.getPopularTours();
 
-  constructor() { }
+  constructor(
+    private toursService: ToursService,
+    private bookingService: BookingService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -46,7 +27,11 @@ export class HomepageComponent implements OnInit {
     console.log(searchQuery);
   }
 
-  onSubmit(payload: any): void {
-    console.log(payload)
+  onSubmit(payload: BookingPayload): void {
+    this.bookingService.createBookingRequest({...payload, interestedTourId: null}).pipe(take(1)).subscribe({
+      next: async value => {
+        await this.router.navigateByUrl('/order-completed');
+      }
+    })
   }
 }

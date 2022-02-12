@@ -1,35 +1,30 @@
-<section class="container mx-auto pt-10">
+<form [formGroup]="form" class="container mx-auto pt-10">
   <div class="px-10 space-y-4 grid md:grid-cols-1 lg:grid-cols-3 ">
 
     <div>
-      <input type="text"
+      <input formControlName="title" type="text"
              class="border px-2 py-2 w-44 bg-transparent rounded focus:outline-none focus:ring focus:ring-white md:w-96"
              placeholder="Search your travel...">
-      <button class="px-2"><i class="fa fa-search text-gray-600" aria-hidden="true"></i></button>
     </div>
 
     <div class="flex lg:justify-end lg:col-span-2">
       <div class="flex gap-2 grid-cols-3 ">
         <div class="sort-item product-per-page">
-          <label for="page" class="font font-medium text-sm md:text-base">Travel type:</label>
-          <select name="post-per-page" id="page"
-                  class="text-sm border px-2 py-2 bg-transparent rounded focus:outline-none focus:ring focus:ring-white appearance-none text-gray-500 md:text-base">
-            <option value=" ">Hiking</option>
-            <option value=" ">Cities</option>
-            <option value=" ">Air Sports</option>
-            <option value=" ">Beach Sports</option>
-          </select>
+          <label class="font font-medium text-sm md:text-base">Travel type:</label>
+          <input formControlName="type" type="text"
+                 class="border px-2 py-2 w-44 bg-transparent rounded focus:outline-none focus:ring focus:ring-white md:w-96"
+                 placeholder="Search your travel...">
         </div>
         <div class="sort-item orderby">
           <label for="orderby" class="font font-medium text-sm md:text-base">Sort By:</label>
-          <select name="orderby" id="orderby"
+          <select formControlName="priceOrder" name="orderby" id="orderby"
                   class="text-sm border px-2 py-2 bg-transparent rounded focus:outline-none focus:ring focus:ring-white appearance-none text-gray-500 md:text-base">
-            <option value="date">What's new</option>
-            <option value="price">Price high to low</option>
-            <option value="price-desc">Price low to high</option>
+            <option *ngFor="let order of orders" [value]="order.value">{{order.label}}</option>
           </select>
         </div>
       </div>
     </div>
+    <button (click)="onSearch()" class="px-2"><i class="fa fa-search text-gray-600" aria-hidden="true"></i></button>
+    <button (click)="onReset()" class="px-2"><i class="fa fa-close text-gray-600" aria-hidden="true"></i></button>
   </div>
-</section>
+</form>

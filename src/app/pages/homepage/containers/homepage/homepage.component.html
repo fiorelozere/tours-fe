@@ -4,7 +4,10 @@
 <section class="container mx-auto">
   <p class="font pt-28 text-3xl text-green-900 text-center font-semibold">Popular Tours</p>
   <div class="flex justify-center grid grid-cols-1 gap-2 mt-10 md:grid-cols-3 px-10 lg:px-32 ">
-    <app-tour *ngFor="let tour of tours" [tour]="tour"></app-tour>
+    <ng-container *ngIf="tours$ | async as tours; else loading">
+      <app-tour *ngFor="let tour of tours" [tour]="tour"></app-tour>
+    </ng-container>
+    <ng-template #loading>Loading...</ng-template>
   </div>
 </section>
 <app-gallery></app-gallery>

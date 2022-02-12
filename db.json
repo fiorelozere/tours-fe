@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "username": "fiorelo",
+      "password": "fiorelo"
+    }
+  ],
+  "tours": [
+    {
+      "id": 4,
+      "title": "Mountain",
+      "description": "\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n        Voluptatibus quia, Nonea! Maiores et\n       perferendis  eaque, exercitationem praesentium nihil.",
+      "price": 23,
+      "image": "assets/img/orange.png",
+      "type": "Hiking"
+    },
+    {
+      "id": 5,
+      "title": "Sea",
+      "description": "\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n        Voluptatibus quia, Nonea! Maiores et\n       perferendis  eaque, exercitationem praesentium nihil.",
+      "price": 24,
+      "image": "assets/img/city.png",
+      "type": "Beach"
+    },
+    {
+      "id": 7,
+      "title": "Mountain",
+      "description": "\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n        Voluptatibus quia, Nonea! Maiores et\n       perferendis  eaque, exercitationem praesentium nihil.",
+      "price": 25,
+      "image": "assets/img/turkey.png",
+      "type": "Camping"
+    }
+  ],
+  "bookings": [
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@gmail.com",
+      "message": "test",
+      "interestedTourId": 4,
+      "id": 1
+    }
+  ]
+}

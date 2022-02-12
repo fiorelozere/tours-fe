@@ -1,28 +1,31 @@
-<section class="container mx-auto my-10">
-  <div class="">
-    <div class="grid md:grid-cols-2">
-      <div class="flex justify-center">
-        <img [src]="tour.image" alt="">
-      </div>
-      <div class="col-span-2 py-10">
-        <p class="text-2xl text-green-900 font font-semibold">{{tour.title}}</p>
-        <p class="text-lg">{{tour.description}}</p>
-        <div class="pt-2 grid gap-2 md:flex md:gap-4">
-          <p><span class="font font-bold text-lg"> Days:</span>
-            Monday, Sunday</p>
-          <p><span class="font font-bold text-lg">Time:</span>
-            06:00 am</p>
-          <p><span class="font font-bold text-lg"> Address:</span>
-            City Center</p>
+<ng-container *ngIf="tour$ | async as tour; else loading">
+  <section class="container mx-auto my-10">
+    <div class="">
+      <div class="grid md:grid-cols-2">
+        <div class="flex justify-center">
+          <img [src]="tour.image" alt="">
         </div>
-        <div class="flex gap-2">
-          <p class="font text-gray-500 text-lg font-medium line-through pt-2">{{tour.price | currency}}</p>
-          <p class="font text-green-900 text-lg font-semibold pt-2">{{tour.price | currency}}</p>
-        </div>
-        <div class="pt-5 mb-8">
-          <app-book-now-form (submit)="onSubmit($event)"></app-book-now-form>
+        <div class="col-span-2 py-10">
+          <p class="text-2xl text-green-900 font font-semibold">{{tour.title}}</p>
+          <p class="text-lg">{{tour.description}}</p>
+          <div class="pt-2 grid gap-2 md:flex md:gap-4">
+<!--            <p><span class="font font-bold text-lg"> Days:</span>-->
+<!--              Monday, Sunday</p>-->
+<!--            <p><span class="font font-bold text-lg">Time:</span>-->
+<!--              06:00 am</p>-->
+<!--            <p><span class="font font-bold text-lg"> Address:</span>-->
+<!--              City Center</p>-->
+          </div>
+          <div class="flex gap-2">
+            <p class="font text-gray-500 text-lg font-medium line-through pt-2">{{tour.price | currency}}</p>
+            <p class="font text-green-900 text-lg font-semibold pt-2">{{tour.price | currency}}</p>
+          </div>
+          <div class="pt-5 mb-8">
+            <app-book-now-form (submit)="onSubmit($event, tour.id)"></app-book-now-form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</ng-container>
+<ng-template #loading>Loading...</ng-template>

@@ -1,5 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {BookingPayload} from "../../models/booking-payload.model";
+import {catchError, pluck, switchMap, take, throwError} from "rxjs";
+import {BookingService} from "../../services/booking.service";
+import {ToursService} from "../../services/tours.service";
 
 @Component({
   selector: 'app-tour-details',
@@ -9,25 +13,32 @@ import {Router} from "@angular/router";
 })
 export class TourDetailsComponent implements OnInit {
 
-  tour = {
-    id: '1',
-    title: 'Mountain',
-    description: `
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Voluptatibus quia, Nonea! Maiores et
-       perferendis  eaque, exercitationem praesentium nihil.`,
-    price: 23,
-    image: 'assets/img/orange.png'
-  };
+  tour$ = this.route.params.pipe(
+    pluck('id'),
+    switchMap(id => this.toursService.getTourById(id).pipe(
+        catchError(err => {
+          this.router.navigateByUrl('/tours');
+          return throwError(err);
+        })
+      ),
+    ))
 
-  constructor(private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private bookingService: BookingService,
+    private toursService: ToursService
+  ) {
   }
 
   ngOnInit(): void {
   }
 
-  onSubmit(payload: any) {
-    console.log(payload);
-    this.router.navigateByUrl('/order-completed');
+  onSubmit(payload: BookingPayload, interestedTourId: number): void {
+    this.bookingService.createBookingRequest({...payload, interestedTourId}).pipe(take(1)).subscribe({
+      next: async value => {
+        await this.router.navigateByUrl('/order-completed');
+      }
+    })
   }
 }
