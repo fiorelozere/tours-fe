@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {ComponentStore} from "@ngrx/component-store";
 import {Tour} from "../models/tour.model";
-import {ToursService} from "./tours.service";
+import {ToursService} from "../../tours/services/tours.service";
 import {catchError, EMPTY, Observable, switchMap, tap} from "rxjs";
 import {HttpResponse} from "@angular/common/http";
 

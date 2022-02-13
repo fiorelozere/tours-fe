@@ -1,9 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {BookingService} from "../../services/booking.service";
+import {BookingService} from "../../../booking-requests/services/booking.service";
 import {BookingPayload} from "../../models/booking-payload.model";
 import {take} from "rxjs";
 import {Router} from "@angular/router";
-import {ToursService} from "../../services/tours.service";
+import {ToursService} from "../../../tours/services/tours.service";
 
 @Component({
   templateUrl: './homepage.component.html',

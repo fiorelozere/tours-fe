@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams, HttpResponse} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../../environments/environment";
-import {ToursParams} from "./tours.store";
-import {Tour} from "../models/tour.model";
+import {ToursParams} from "../../homepage/services/tours.store";
+import {Tour} from "../../homepage/models/tour.model";
 
 @Injectable({
   providedIn: 'root'

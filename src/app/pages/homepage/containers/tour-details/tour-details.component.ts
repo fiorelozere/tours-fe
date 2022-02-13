@@ -2,8 +2,8 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {BookingPayload} from "../../models/booking-payload.model";
 import {catchError, pluck, switchMap, take, throwError} from "rxjs";
-import {BookingService} from "../../services/booking.service";
-import {ToursService} from "../../services/tours.service";
+import {BookingService} from "../../../booking-requests/services/booking.service";
+import {ToursService} from "../../../tours/services/tours.service";
 
 @Component({
   selector: 'app-tour-details',
