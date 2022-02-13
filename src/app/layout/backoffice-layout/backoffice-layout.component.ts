@@ -1,4 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {GlobalStore} from "../../core/services/global.store";
+import {Router} from "@angular/router";
 
 @Component({
   templateUrl: './backoffice-layout.component.html',
@@ -7,9 +9,16 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 })
 export class BackofficeLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public store: GlobalStore,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  logout(): void {
+    this.store.setUser(null);
+    this.router.navigateByUrl('/auth/sign-in');
+  }
 }

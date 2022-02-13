@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {MainLayoutComponent} from "./layout/main-layout/main-layout.component";
 import {BackofficeLayoutComponent} from "./layout/backoffice-layout/backoffice-layout.component";
 import {AuthLayoutComponent} from "./layout/auth-layout/auth-layout.component";
@@ -25,7 +25,22 @@ const routes: Routes = [
   {
     path: 'dashboard',
     canActivate: [AuthGuard],
-    component: BackofficeLayoutComponent
+    component: BackofficeLayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'booking-requests',
+        pathMatch: 'full'
+      },
+      {
+        path: 'booking-requests',
+        loadChildren: () => import('./pages/booking-requests/booking-requests.module').then(m => m.BookingRequestsModule)
+      },
+      {
+        path: 'tours',
+        loadChildren: () => import('./pages/tours/tours.module').then(m => m.ToursModule)
+      }
+    ]
   },
   {
     path: 'auth',
@@ -44,4 +59,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

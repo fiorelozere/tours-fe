@@ -6,6 +6,8 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { NavbarComponent } from './main-layout/components/navbar/navbar.component';
 import {RouterModule} from "@angular/router";
 import { FooterComponent } from './main-layout/components/footer/footer.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -19,7 +21,9 @@ import { FooterComponent } from './main-layout/components/footer/footer.componen
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatToolbarModule,
+    MatButtonModule
   ]
 })
 export class LayoutModule { }

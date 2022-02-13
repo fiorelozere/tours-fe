@@ -1,1 +1,24 @@
-<p>backoffice-layout works!</p>
+<mat-toolbar color="primary">
+  <div style="width: 100%" class="flex justify-between content-center">
+    <div class="flex">
+      <p>Dashboard</p>
+      <div class="mx-3">
+        <button style="margin: 0 5px" mat-stroked-button routerLinkActive="active"
+                routerLink="/dashboard/booking-requests">Booking requests
+        </button>
+        <button style="margin: 0 5px" class="mx-2" mat-stroked-button routerLinkActive="active"
+                routerLink="/dashboard/tours">Tours
+        </button>
+        <button style="margin: 0 5px" class="mx-2" mat-stroked-button routerLinkActive="active"
+                routerLink="/dashboard/users">Users
+        </button>
+      </div>
+    </div>
+    <div class="flex content-center">
+      <p>{{store.user?.email}}</p>
+      <button style="margin: 0 5px" class="mx-2" mat-stroked-button (click)="logout()">Logout
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>
