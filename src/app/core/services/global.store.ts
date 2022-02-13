@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
+import {LocalstorageService} from "./local-storage.service";
 
 export interface GlobalState {
   user: {email: string, password: string} | null;
@@ -16,7 +17,7 @@ export class GlobalStore {
   state$$ = new BehaviorSubject<GlobalState>(patientState);
   state$ = this.state$$.asObservable();
 
-  constructor() {
+  constructor(private localStorage: LocalstorageService) {
   }
 
   setState(value: any): void {
@@ -33,9 +34,9 @@ export class GlobalStore {
 
   setUser(user: {email: string, password: string} | null) {
     if(user) {
-      localStorage.setItem('user', JSON.stringify(user));
+      this.localStorage.setItem('user', JSON.stringify(user));
     } else {
-      localStorage.removeItem('user');
+      this.localStorage.removeItem('user');
     }
     this.state$$.next({...this.state, user});
   }

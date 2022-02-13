@@ -15,7 +15,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     CoreModule,
     LayoutModule,
