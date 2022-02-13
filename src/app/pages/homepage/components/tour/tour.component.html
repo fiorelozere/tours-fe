@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="px-6 pt-2 mb-8">
-    <button (click)="bookClicked.emit(tour)" class="font px-6 py-2 text-white bg-green-900 hover:bg-green-800 shadow-lg rounded">
+    <button [routerLink]="'/tours/' + tour.id" class="font px-6 py-2 text-white bg-green-900 hover:bg-green-800 shadow-lg rounded">
       BOOK NOW
     </button>
   </div>
