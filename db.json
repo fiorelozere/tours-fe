@@ -8,19 +8,11 @@
   ],
   "tours": [
     {
-      "id": 4,
-      "title": "Mountain",
-      "description": "\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n        Voluptatibus quia, Nonea! Maiores et\n       perferendis  eaque, exercitationem praesentium nihil.",
-      "price": 23,
-      "image": "assets/img/orange.png",
-      "type": "Hiking"
-    },
-    {
       "id": 5,
       "title": "Sea",
       "description": "\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n        Voluptatibus quia, Nonea! Maiores et\n       perferendis  eaque, exercitationem praesentium nihil.",
       "price": 24,
-      "image": "assets/img/city.png",
+      "image": "assets/img/sea.png",
       "type": "Beach"
     },
     {
@@ -30,16 +22,32 @@
       "price": 25,
       "image": "assets/img/turkey.png",
       "type": "Camping"
+    },
+    {
+      "title": "test",
+      "type": "test",
+      "description": "test",
+      "price": 25,
+      "image": "https://images.unsplash.com/photo-1644681950291-047f2e7410d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2812&q=80",
+      "id": 8
+    },
+    {
+      "title": "Test 2",
+      "type": "test",
+      "description": "test",
+      "price": 50,
+      "image": "https://images.unsplash.com/photo-1527685609591-44b0aef2400b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1933&q=80",
+      "id": 9
     }
   ],
   "bookings": [
     {
-      "firstName": "test",
-      "lastName": "test",
+      "firstName": "test1",
+      "lastName": "test2",
       "email": "test@gmail.com",
       "message": "test",
-      "interestedTourId": 4,
-      "id": 1
+      "tourId": 5,
+      "id": 3
     }
   ]
 }

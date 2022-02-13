@@ -1,1 +1,22 @@
-<p>all-tours works!</p>
+<ng-container *ngIf="store.state$ | async as state">
+  <div class="w-[100%] flex justify-between content-center">
+    <h2>Tours</h2>
+    <button routerLink="/dashboard/tours/create" mat-stroked-button>Create</button>
+  </div>
+
+  <app-tours-filter-form
+    [formValue]="state.params"
+    (search)="paramsChanged($event)"
+  >
+  </app-tours-filter-form>
+
+  <app-tours-table
+    [pageSize]="state.params.pageSize"
+    [pageNumber]="state.params.pageNumber"
+    [total]="state.total"
+    [tours]="state.data"
+    (onDelete)="delete($event)"
+    (pageChanged)="paramsChanged($event)"
+  ></app-tours-table>
+</ng-container>
+

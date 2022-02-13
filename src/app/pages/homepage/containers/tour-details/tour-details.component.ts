@@ -34,8 +34,8 @@ export class TourDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(payload: BookingPayload, interestedTourId: number): void {
-    this.bookingService.createBookingRequest({...payload, interestedTourId}).pipe(take(1)).subscribe({
+  onSubmit(payload: BookingPayload, tourId: number): void {
+    this.bookingService.createBookingRequest({...payload, tourId}).pipe(take(1)).subscribe({
       next: async value => {
         await this.router.navigateByUrl('/order-completed');
       }

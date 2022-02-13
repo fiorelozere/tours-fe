@@ -1,0 +1,36 @@
+<div class="flex m-3 content-center">
+  <form [formGroup]="form">
+    <mat-form-field class="mx-1" appearance="outline">
+      <mat-label>Title</mat-label>
+      <input formControlName="title"  matInput>
+    </mat-form-field>
+
+    <mat-form-field  class="mx-1" appearance="outline">
+      <mat-label>Type</mat-label>
+      <input formControlName="type" matInput>
+    </mat-form-field>
+
+    <mat-form-field  class="mx-1" appearance="outline">
+      <mat-label>Price Order</mat-label>
+      <mat-select formControlName="priceOrder">
+        <mat-option *ngFor="let order of orders" [value]="order.value">
+          {{order.label}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+  <div class="flex mx-1" style="align-items: center">
+
+    <button (click)="onSearch()"
+            style="margin: 0 5px"
+            class="mx-1" color="primary" mat-stroked-button>
+      <i class="fa fa-search"></i>
+    </button>
+
+    <button (click)="onReset()"
+            style="margin: 0 5px" class="mx-1" mat-stroked-button>
+      <i class="fa fa-close"></i>
+    </button>
+  </div>
+</div>

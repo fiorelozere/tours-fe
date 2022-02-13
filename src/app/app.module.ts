@@ -8,6 +8,7 @@ import {LayoutModule} from "./layout/layout.module";
 import {SharedModule} from "./shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

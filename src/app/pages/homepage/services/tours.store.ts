@@ -8,9 +8,9 @@ import {HttpResponse} from "@angular/common/http";
 export interface ToursParams {
   title: string | null;
   type: string | null;
-  priceOrder: 'asc' | 'desc',
-  pageNumber: number,
-  pageSize: number
+  priceOrder: 'asc' | 'desc';
+  pageNumber: number;
+  pageSize: number;
 }
 
 export interface ToursState {

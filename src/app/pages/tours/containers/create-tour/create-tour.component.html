@@ -1,0 +1,8 @@
+<div class="w-[100%] flex justify-between content-center">
+  <button routerLink="/dashboard/tours" mat-stroked-button><i class="fa fa-chevron-left"></i></button>
+  <h1>Create tour</h1>
+  <button (click)="onSubmit()" routerLink="/dashboard/tours/create" mat-stroked-button>Save</button>
+</div>
+<div class="m-3">
+  <app-tour-form></app-tour-form>
+</div>

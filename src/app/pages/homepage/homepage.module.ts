@@ -36,29 +36,32 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [
-    HomepageComponent,
-    HeroComponent,
-    AboutUsComponent,
-    WhatWeOfferComponent,
-    TourComponent,
-    GalleryComponent,
-    BookNowFormComponent,
-    AboutComponent,
-    ToursComponent,
-    TourFiltersComponent,
-    TourDetailsComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    FormsModule,
-    ReactiveFormsModule,
-    SharedModule
-  ],
-  providers: [
-    ToursStore
-  ]
+    declarations: [
+        HomepageComponent,
+        HeroComponent,
+        AboutUsComponent,
+        WhatWeOfferComponent,
+        TourComponent,
+        GalleryComponent,
+        BookNowFormComponent,
+        AboutComponent,
+        ToursComponent,
+        TourFiltersComponent,
+        TourDetailsComponent
+    ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        FormsModule,
+        ReactiveFormsModule,
+        SharedModule
+    ],
+    exports: [
+        TourFiltersComponent
+    ],
+    providers: [
+        ToursStore
+    ]
 })
 export class HomepageModule {
 }

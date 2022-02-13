@@ -28,7 +28,7 @@ export class HomepageComponent implements OnInit {
   }
 
   onSubmit(payload: BookingPayload): void {
-    this.bookingService.createBookingRequest({...payload, interestedTourId: null}).pipe(take(1)).subscribe({
+    this.bookingService.createBookingRequest({...payload, tourId: 0}).pipe(take(1)).subscribe({
       next: async value => {
         await this.router.navigateByUrl('/order-completed');
       }

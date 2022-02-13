@@ -3,5 +3,5 @@ export interface BookingPayload {
   lastName: string;
   email: string;
   message: string;
-  interestedTourId: number | null;
+  tourId: number | null;
 }

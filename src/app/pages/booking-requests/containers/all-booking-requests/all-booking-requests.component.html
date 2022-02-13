@@ -1,1 +1,21 @@
-<p>all-booking-requests works!</p>
+<ng-container *ngIf="store.state$ | async as state">
+  <div class="w-[100%] flex justify-between content-center">
+    <h2>Booking requests</h2>
+    <button (click)="paramsChanged({})" mat-button><i class="fa fa-repeat"></i></button>
+  </div>
+
+  <app-booking-requests-filters
+  [formValue]="state.params"
+  (search)="paramsChanged($event)"
+  >
+  </app-booking-requests-filters>
+
+  <app-booking-request-table
+    [pageSize]="state.params.pageSize"
+    [pageNumber]="state.params.pageNumber"
+    [total]="state.total"
+    [requests]="state.data"
+    (pageChanged)="paramsChanged($event)"
+  ></app-booking-request-table>
+</ng-container>
+

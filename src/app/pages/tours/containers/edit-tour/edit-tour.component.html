@@ -1,0 +1,11 @@
+<ng-container *ngIf="tour$ | async as tour; else loading">
+  <div class="w-[100%] flex justify-between content-center">
+    <button routerLink="/dashboard/tours" mat-stroked-button><i class="fa fa-chevron-left"></i></button>
+    <h1>Edit tour</h1>
+    <button (click)="onSubmit(tour.id)" routerLink="/dashboard/tours/create" mat-stroked-button>Save</button>
+  </div>
+  <div class="m-3">
+    <app-tour-form [formValue]="tour"></app-tour-form>
+  </div>
+</ng-container>
+<ng-template #loading>Loading...</ng-template>

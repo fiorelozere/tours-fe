@@ -1,0 +1,32 @@
+<form [formGroup]="form" class="flex flex-col justify-start" style="max-width: 500px">
+  <mat-form-field class="mx-1" appearance="outline">
+    <mat-label>Title</mat-label>
+    <input formControlName="title" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="mx-1" appearance="outline">
+    <mat-label>Type</mat-label>
+    <input formControlName="type" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="mx-1" appearance="outline">
+    <mat-label>Description</mat-label>
+    <textarea formControlName="description" matInput></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="mx-1" appearance="outline">
+    <mat-label>Price</mat-label>
+    <input type="number" formControlName="price" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="mx-1" appearance="outline">
+    <mat-label>Image</mat-label>
+    <input formControlName="image" matInput>
+  </mat-form-field>
+
+  <div class="image-preview">
+    <img *ngIf="image" [src]="image" alt="Image preview">
+  </div>
+
+</form>
+

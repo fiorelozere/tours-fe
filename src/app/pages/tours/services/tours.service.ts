@@ -46,4 +46,19 @@ export class ToursService {
 
     return httpParams;
   }
+
+  deleteTour(id: number): Observable<any> {
+    const path = `${environment.apiUrl}/tours/${id}`;
+    return this.http.delete(path);
+  }
+
+  createTour(payload: Partial<Tour>): Observable<any> {
+    const path = `${environment.apiUrl}/tours`
+    return this.http.post(path, payload);
+  }
+
+  editTour(payload: Partial<Tour>, id: number): Observable<any> {
+    const path = `${environment.apiUrl}/tours/${id}`
+    return this.http.patch(path, payload);
+  }
 }

@@ -1,11 +1,12 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {GlobalStore} from "../../core/services/global.store";
 import {Router} from "@angular/router";
 
 @Component({
   templateUrl: './backoffice-layout.component.html',
   styleUrls: ['./backoffice-layout.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class BackofficeLayoutComponent implements OnInit {
 
