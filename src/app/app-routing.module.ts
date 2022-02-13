@@ -39,6 +39,10 @@ const routes: Routes = [
       {
         path: 'tours',
         loadChildren: () => import('./pages/tours/tours.module').then(m => m.ToursModule)
+      },
+      {
+        path: 'users',
+        loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule)
       }
     ]
   },

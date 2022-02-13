@@ -1,18 +1,41 @@
-<section class="container mx-auto">
-  <p class="font py-10 mt-20  text-green-900 text-3xl text-center font-semibold">Gallery</p>
-  <div class="grid justify-center md:grid-cols-3 lg:px-32 gap-4">
-    <div class="grid gap-4">
-      <div class="container">
-        <img src="assets/img/brige.png" alt="" class="rounded">
+<section class="container mx-auto px-5 md:px-0">
+  <p class="font py-10 mt-5 md:mt-20 text-green-900 text-3xl text-center font-semibold">Gallery</p>
+  <div class="grid grid-cols-2 justify-center md:grid-cols-3 lg:px-32 gap-6">
+    <div class="grid">
+      <div class="grid gap-6">
+        <div class="relative group">
+          <img src="assets/img/brige.png" alt=""
+               class="rounded shadow-lg transition ease-in-out delay-250 group-hover:-translate-y-1 group-hover:scale-110 duration-300 group-hover:opacity-70 group-hover:shadow-xl">
+          <p class="centered text-center"> <span class="opacity-0 text-white text-4xl uppercase group-hover:opacity-100">Istanbul</span>
+            <br> <span class="opacity-0 text-white text-3xl font-thin uppercase group-hover:opacity-100">turkey </span> </p>
+        </div>
+        <div class="relative group">
+          <img src="assets/img/hiking.png" alt=""
+               class="rounded shadow-lg transition ease-in-out delay-250 group-hover:-translate-y-1 group-hover:scale-110 duration-300 group-hover:opacity-70 group-hover:shadow-xl">
+          <p class="centered text-center"> <span class="opacity-0 text-white text-4xl uppercase group-hover:opacity-100">Borsh</span>
+            <br> <span class="opacity-0 text-white text-3xl font-thin uppercase group-hover:opacity-100">Albania</span> </p>
+        </div>
       </div>
-      <img src="assets/img/hiking.png" alt="" class="rounded">
     </div>
-    <div class="grid gap-4">
-      <img src="assets/img/build.png" alt="" class="rounded">
-      <img src="assets/img/sea.png" alt="" class="rounded">
+    <div class="grid gap-6">
+      <div class="relative group">
+        <img src="assets/img/build.png" alt=""
+             class="rounded shadow-lg transition ease-in-out delay-250 group-hover:-translate-y-1 group-hover:scale-110 duration-300 group-hover:opacity-70 group-hover:shadow-xl">
+        <p class="centered text-center"> <span class="opacity-0 text-white text-4xl uppercase group-hover:opacity-100">Bursa</span>
+          <br> <span class="opacity-0 text-white text-3xl font-thin uppercase group-hover:opacity-100">turkey</span> </p>
+      </div>
+      <div class="relative group">
+        <img src="assets/img/sea.png" alt=""
+             class="rounded shadow-lg transition ease-in-out delay-250 group-hover:-translate-y-1 group-hover:scale-110 duration-300 group-hover:opacity-70 group-hover:shadow-xl">
+        <p class="centered text-center"> <span class="opacity-0 text-white text-4xl uppercase group-hover:opacity-100">Kotor</span>
+          <br> <span class="opacity-0 text-white text-3xl font-thin uppercase group-hover:opacity-100">Montenegro</span> </p>
+      </div>
     </div>
-    <div class="">
-      <img src="assets/img/ballon.png" alt="" class="rounded">
+    <div class="hidden md:flex relative justify-center group">
+      <img src="assets/img/ballon.png" alt=""
+           class="rounded shadow-lg transition ease-in-out delay-250 group-hover:-translate-y-1 group-hover:scale-110 duration-300 group-hover:opacity-70 group-hover:shadow-xl">
+      <p class="centered text-center"> <span class="opacity-0 text-white text-4xl uppercase group-hover:opacity-100">cappadocia</span>
+        <br> <span class="opacity-0 text-white text-3xl font-thin uppercase group-hover:opacity-100">turkey </span> </p>
     </div>
   </div>
 </section>

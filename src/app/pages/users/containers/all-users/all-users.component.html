@@ -1,0 +1,15 @@
+<ng-container *ngIf="users$ | async as users; else loading">
+  <div class="w-[100%] flex justify-between content-center">
+    <h2>Users</h2>
+    <button routerLink="/dashboard/users/create" mat-stroked-button>Create</button>
+  </div>
+  <div class="m-3">
+    <app-users-table
+      [users]="users"
+      (onDelete)="delete($event)"
+    ></app-users-table>
+  </div>
+
+</ng-container>
+
+<ng-template #loading>Loading...</ng-template>

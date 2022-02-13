@@ -1,21 +1,21 @@
 <ng-container *ngIf="store.state$ | async as state">
-<app-tour-filters
-  (search)="search($event)"
-  [formValue]="state.params"></app-tour-filters>
-<section class="container mx-auto">
-  <div class="flex justify-center grid grid-cols-1 gap-8 my-10 md:grid-cols-3 lg:grid-cols-4  px-10 ">
-    <app-tour
-      (bookClicked)="router.navigateByUrl('/tours/' + $event.id)"
-      *ngFor="let tour of state.data" [tour]="tour">
-    </app-tour>
-  </div>
-  <div>
-    <app-pagination
-      [total]="state.total"
-      [pageNumber]="state.params.pageNumber"
-      [pageSize]="state.params.pageSize"
-      (pageChanged)="paginate($event)"
-    ></app-pagination>
-  </div>
-</section>
+  <app-tour-filters
+    (search)="search($event)"
+    [formValue]="state.params"></app-tour-filters>
+  <section class="container mx-auto justify-center items-center">
+    <div class="px-5 flex justify-center grid grid-cols-2 gap-4 mt-10 md:grid-cols-4 lg:px-10 lg:px-32 ">
+      <app-tour
+        (bookClicked)="router.navigateByUrl('/tours/' + $event.id)"
+        *ngFor="let tour of state.data" [tour]="tour">
+      </app-tour>
+    </div>
+    <div>
+      <app-pagination
+        [total]="state.total"
+        [pageNumber]="state.params.pageNumber"
+        [pageSize]="state.params.pageSize"
+        (pageChanged)="paginate($event)"
+      ></app-pagination>
+    </div>
+  </section>
 </ng-container>

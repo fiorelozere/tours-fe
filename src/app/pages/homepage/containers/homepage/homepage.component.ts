@@ -23,10 +23,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSearch(searchQuery: string): any {
-    console.log(searchQuery);
-  }
-
   onSubmit(payload: BookingPayload): void {
     this.bookingService.createBookingRequest({...payload, tourId: 0}).pipe(take(1)).subscribe({
       next: async value => {

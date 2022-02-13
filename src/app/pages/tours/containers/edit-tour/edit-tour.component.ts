@@ -19,7 +19,7 @@ export class EditTourComponent implements OnInit {
     pluck('id'),
     switchMap(id => this.toursService.getTourById(id).pipe(
         catchError(err => {
-          this.router.navigateByUrl('/tours');
+          this.router.navigateByUrl('/dashboard/tours');
           return throwError(err);
         })
       ),

@@ -1,0 +1,11 @@
+<ng-container *ngIf="user$ | async as user; else loading">
+  <div class="w-[100%] flex justify-between content-center">
+    <button routerLink="/dashboard/users" mat-stroked-button><i class="fa fa-chevron-left"></i></button>
+    <h1>Edit user</h1>
+    <button (click)="onSubmit(user.id)" routerLink="/dashboard/users/create" mat-stroked-button>Save</button>
+  </div>
+  <div class="m-3">
+    <app-user-form [formValue]="user"></app-user-form>
+  </div>
+</ng-container>
+<ng-template #loading>Loading...</ng-template>

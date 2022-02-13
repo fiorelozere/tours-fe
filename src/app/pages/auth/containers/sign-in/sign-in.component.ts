@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {UsersService} from "../../services/users.service";
+import {AuthService} from "../../services/auth.service";
 import {BehaviorSubject, take} from "rxjs";
 import {Router} from "@angular/router";
 import {GlobalStore} from "../../../../core/services/global.store";
@@ -26,7 +26,7 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private usersService: UsersService,
+    private usersService: AuthService,
     private router: Router,
     private globalStore: GlobalStore
   ) {

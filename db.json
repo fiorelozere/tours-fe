@@ -3,7 +3,12 @@
     {
       "id": 3,
       "email": "fiorelo@gmail.com",
-      "password": "fiorelo"
+      "password": "12345678"
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "test",
+      "id": 4
     }
   ],
   "tours": [
@@ -32,12 +37,20 @@
       "id": 8
     },
     {
-      "title": "Test 2",
+      "title": "Bridge",
       "type": "test",
       "description": "test",
       "price": 50,
       "image": "https://images.unsplash.com/photo-1527685609591-44b0aef2400b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1933&q=80",
       "id": 9
+    },
+    {
+      "title": "test",
+      "type": "test",
+      "description": "test",
+      "price": 34,
+      "image": "https://images.unsplash.com/photo-1536854614829-3f8da6581bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1871&q=80",
+      "id": 10
     }
   ],
   "bookings": [

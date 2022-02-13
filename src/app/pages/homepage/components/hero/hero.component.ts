@@ -8,9 +8,6 @@ import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '
 })
 export class HeroComponent implements OnInit {
 
-  searchInput = '';
-  @Output() onSearch = new EventEmitter<any>();
-
   constructor() { }
 
   ngOnInit(): void {

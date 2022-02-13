@@ -13,10 +13,25 @@ body{
 }
 
 
-/* .hero{
- background-image: url(https://getwallpapers.com/wallpaper/full/0/6/a/911124-desktop-wallpaper-nature-1920x1080-for-pc.jpg);
- size:cover;
-}  */
+.hero{
+   background-image: url(https://www.australia.com/content/australia/en/jcr:content/root/hero_homepage/desktop.adapt.1920.high.jpg);
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
+ }
+
+.offer{
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(https://images.pexels.com/photos/571169/pexels-photo-571169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-position: center;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 #myBtn {
   display: none;
@@ -37,5 +52,4 @@ body{
 #myBtn:hover {
   background-color: #1d703e;
 }
-
 
