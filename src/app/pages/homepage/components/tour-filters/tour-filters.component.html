@@ -10,13 +10,12 @@
     <div class="flex lg:justify-end lg:col-span-2">
       <div class="flex gap-2 grid-cols-3 ">
         <div class="sort-item product-per-page">
-          <label class="font font-medium text-sm md:text-base">Travel type:</label>
           <input formControlName="type" type="text"
                  class="border px-2 py-2 w-44 bg-transparent rounded focus:outline-none focus:ring focus:ring-white md:w-96"
-                 placeholder="Search your travel...">
+                 placeholder="Travel type">
         </div>
         <div class="sort-item orderby">
-          <label for="orderby" class="font font-medium text-sm md:text-base">Sort By:</label>
+          <label for="orderby" class="font font-medium text-sm md:text-base">Price:</label>
           <select formControlName="priceOrder" name="orderby" id="orderby"
                   class="text-sm border px-2 py-2 bg-transparent rounded focus:outline-none focus:ring focus:ring-white appearance-none text-gray-500 md:text-base">
             <option *ngFor="let order of orders" [value]="order.value">{{order.label}}</option>

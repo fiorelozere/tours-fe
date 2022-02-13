@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
 import {ToursStore} from "../../../homepage/services/tours.store";
 import {BookingRequestsParams} from "../../../booking-requests/services/booking-requests.store";
 import {MatDialog} from "@angular/material/dialog";
@@ -18,7 +18,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class AllToursComponent implements OnInit {
 
   constructor(
-    public store: ToursStore,
+    @Inject('tours-bo') public store: ToursStore,
     public dialog: MatDialog,
     private toursService: ToursService,
     private snackBar: MatSnackBar

@@ -60,7 +60,7 @@ const routes: Routes = [
         TourFiltersComponent
     ],
     providers: [
-        ToursStore
+      {provide: 'tours-fe', useClass: ToursStore}
     ]
 })
 export class HomepageModule {

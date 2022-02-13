@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {ToursParams, ToursStore} from "../../services/tours.store";
 import {Tour} from "../../models/tour.model";
@@ -13,7 +13,7 @@ export class ToursComponent implements OnInit {
 
   constructor(
     public router: Router,
-    public store: ToursStore
+    @Inject('tours-fe') public store: ToursStore
   ) { }
 
   ngOnInit(): void {

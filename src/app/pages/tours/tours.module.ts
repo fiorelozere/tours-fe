@@ -52,7 +52,7 @@ const routes: Routes = [
     MatButtonModule
   ],
   providers: [
-    ToursStore
+    {provide: 'tours-bo', useClass: ToursStore}
   ]
 })
 export class ToursModule {
