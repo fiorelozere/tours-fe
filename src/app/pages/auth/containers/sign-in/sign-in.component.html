@@ -1,1 +1,38 @@
-<p>sign-in works!</p>
+
+<section>
+  <div class="pt-14 flex items-center justify-center">
+    <div class="bg-white shadow-lg flex flex-col rounded-lg px-6 lg:px-20 py-10">
+      <div class="">
+        <h1 class="font-bold text-2xl lg:text-4xl">Welcome</h1>
+        <p class="font-semibold">Please first log in!</p>
+      </div>
+
+      <form [formGroup]="form" class="flex flex-col">
+        <div class="mt-4">
+          <label for="email" class="sr-only">Email</label>
+          <input formControlName="email" type="text" name="email" id="email" placeholder="Email"
+                 class="border-2 rounded-lg py-3 px-3 bg-white placeholder-gray-400 w-72" value="">
+        </div>
+
+        <div class="mt-6">
+          <label for="password" class="sr-only">Password</label>
+          <input formControlName="password" type="password" name="password" id="password" placeholder="Password"
+                 class="border-2 rounded-lg py-3 px-3 bg-white placeholder-gray-400 w-72" value="">
+        </div>
+
+        <button (click)="submit()" type="button"
+                class="bg-green-900 hover:bg-green-800 mt-6 text-white rounded-lg py-3 font-semibold">Log
+          in
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="flex justify-center content-center" *ngIf="alert$ | async as alert">
+    <div  *ngIf="alert.show" class="min-w-[350px] flex flex-col mt-5 bg-red-100 border border-red-200 text-red-800 px-2 py-1 md:px-4 md:py-3 rounded relative"
+         role="alert">
+      <strong class="font-bold text-xs md:text-sm">Try again!</strong>
+      <p class="block text-xs md:text-sm sm:inline">{{alert.message}}</p>
+      <p class="absolute top-0 bottom-0 right-0 px-4 py-3"></p>
+    </div>
+  </div>
+</section>

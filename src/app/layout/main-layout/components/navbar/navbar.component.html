@@ -23,10 +23,8 @@
         routerLinkActive="border-green-900 text-green-900  border-b-4"
         routerLink="/tours"
         class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">Tours</a>
-      <a href=""
-         class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">Gallery</a>
-      <a
-         class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">Log in</a>
+      <a routerLink="/auth/sign-in"
+         class="py-4 px-2 text-gray-500 font-semibold hover:text-green-900 transition duration-300">Sign in</a>
 
     </div>
 
@@ -55,8 +53,8 @@
         Tours</a></li>
       <!-- <li><a href="" class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">User name<i class="fa fa-user-o pl-2"></i></a></li>
 <li><a href="" class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">Logout</a></li> -->
-      <li (click)="mobileMenuHidden = true"><a
-             class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">Login<i
+      <li routerLink="/auth/sign-in"  (click)="mobileMenuHidden = true"><a
+             class="block text-sm px-2 py-4 hover:bg-green-900 hover:text-white transition duration-300">Sign in<i
         class="fa fa-user-o pl-2"></i></a></li>
     </ul>
   </div>
